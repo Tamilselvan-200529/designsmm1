@@ -1,0 +1,137 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN (DESKTOP, TABLET, MOBILE)
+   ========================================================================== */
+
+/* Tablet & Smaller Desktops (<= 1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 210px;
+  }
+
+  .page-content {
+    padding: 20px;
+  }
+
+  .composer-grid {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+  }
+
+  .composer-editor-panel {
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .dashboard-grid-summary {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .dashboard-two-col {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Tablet Portrait & Large Mobile (<= 768px) */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; /* Replaced by mobile drawer */
+  }
+
+  .topbar {
+    display: none; /* Replaced by mobile topbar */
+  }
+
+  .mobile-topbar {
+    display: flex;
+  }
+
+  .mobile-bottom-nav {
+    display: flex;
+  }
+
+  .main-wrapper {
+    padding-bottom: calc(var(--mobile-bottom-nav-height) + 12px);
+  }
+
+  .page-content {
+    padding: 16px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .page-actions {
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .calendar-grid-header {
+    font-size: 10px;
+  }
+
+  .calendar-weekday {
+    padding: 6px 2px;
+  }
+
+  .calendar-day-cell {
+    min-height: 80px;
+    padding: 4px;
+  }
+
+  .cal-post-title {
+    display: none; /* Minimal pill on mobile */
+  }
+
+  .cal-post-card {
+    padding: 2px 4px;
+  }
+
+  .composer-modal {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100vh !important;
+    border-radius: 0 !important;
+  }
+
+  .drawer-container {
+    max-width: 100% !important;
+  }
+
+  .table-responsive-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Mobile Screen Sizes (<= 430px / 390px) */
+@media (max-width: 480px) {
+  .dashboard-grid-summary {
+    grid-template-columns: 1fr !important;
+  }
+
+  .calendar-view-toggle {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .calendar-view-btn {
+    flex: 1;
+    text-align: center;
+    padding: 6px 4px;
+    font-size: 11px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  .modal-container {
+    margin: 10px;
+    max-height: 94vh;
+  }
+}

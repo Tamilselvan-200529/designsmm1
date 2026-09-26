@@ -1,0 +1,132 @@
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 80;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.search-dropdown-container {
+  position: fixed;
+  top: var(--topbar-height);
+  left: var(--sidebar-width);
+  right: 0;
+  z-index: 85;
+  display: flex;
+  justify-content: center;
+  padding: 32px 24px;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .search-dropdown-container {
+    left: 0;
+    padding: 16px;
+  }
+}
+
+.search-dropdown-inner {
+  width: 100%;
+  max-width: 800px;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: slideDown 0.2s ease-out;
+}
+
+.search-box-large {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.search-box-large:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
+}
+
+.search-box-input {
+  width: 100%;
+  padding: 18px 24px;
+  padding-right: 56px; /* Space for the icon */
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  background: transparent;
+}
+
+.search-box-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-box-icon {
+  position: absolute;
+  right: 20px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.search-results-panel {
+  background-color: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 16px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.search-result-item {
+  padding: 10px 14px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  background-color: #ffffff;
+}
+
+.search-result-item:hover {
+  background-color: var(--bg-subtle);
+  border-color: var(--border-strong);
+}
+
+.search-result-text {
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400px;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
