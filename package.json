@@ -7,8 +7,8 @@
     "integrations/*"
   ],
   "scripts": {
-    "dev": "echo \"Monorepo development script placeholder\"",
-    "build": "echo \"Monorepo build script placeholder\"",
-    "test": "echo \"Monorepo test script placeholder\""
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   }
 }
